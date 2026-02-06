@@ -2,6 +2,9 @@ import React, { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
+import dotenv from "dotenv"
+dotenv.config()
+
 const Contact = () => {
   const form = useRef();
   const [isSent, setIsSent] = useState(false);
@@ -10,10 +13,10 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_5azyhdt",
-        "template_15z0mln",
+        process.env.EMAILJS_SERVICE_ID,
+        process.env.TEMPLATE_ID,
         form.current,
-        "m_l3nns-z-IfGFm6w",
+         process.env.PUBLIC_KEY,
       )
       .then(
         () => {
