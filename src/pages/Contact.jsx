@@ -13,10 +13,10 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        process.env.EMAILJS_SERVICE_ID,
-        process.env.TEMPLATE_ID,
+        import.meta.env.EMAILJS_SERVICE_ID,
+        import.meta.env.TEMPLATE_ID,
         form.current,
-         process.env.PUBLIC_KEY,
+         import.meta.env.PUBLIC_KEY,
       )
       .then(
         () => {
