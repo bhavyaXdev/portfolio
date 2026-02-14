@@ -23,27 +23,29 @@ const Home = () => {
   return (
     <>
       <div
-      id="home"
+      
         className="
-          w-full h-auto  
+          w-full   
         "
       >
-        <ToggleBtn />
-        <div
+        
+       <div className=" max-w-6xl mx-auto">
+         <div
           className="
             overflow-hidden 
-            h-auto 
-            py-30 md:py-10
+               max-w-5xl mx-auto min-h-100 
+            pt-30 md:pt-10 lg:mt-15
             text-[#b64754]  max-sm:text-center
-            gap-15 dark:text-pink-200 items-center justify-center
-            md:flex lg:py-20 md:px-20
+            lg:gap-20  dark:text-pink-200  justify-center 
+            md:flex  md:px-20 md:justify-around gap-10
           "
         >
+          
           <div
             className=" reveal
-              h-100 
-              p-5 py-0
-              lg:w-120 md:p-3 
+
+              p-5 
+               lg:max-w-xl md:p-3 md:mt-10 lg:mt-5
             "
           >
             <h5
@@ -102,7 +104,7 @@ const Home = () => {
             <div
               className="
                 flex max-sm:justify-center max-sm:mx-auto
-                w-50 h-auto
+                w-50 
                 mt-5
                 ms-5 gap-5
               "
@@ -156,7 +158,7 @@ const Home = () => {
             </div>
             <div
               className="
-                py-10 flex gap-5 max-sm:justify-center max-sm:mx-auto
+                py-10 flex gap-5 max-sm:justify-center max-sm:mx-auto 
               "
             >
               <a
@@ -187,21 +189,21 @@ const Home = () => {
           </div>
           <div
             className="
-              h-auto
-              p-5  reveal
+              lg:max-w-sm md:w-xl 
+              p-10  reveal
               justify-center items-center
-              md:flex md:w-100 md:mt-0 md:p-0
+              md:flex md:mt-0 md:px-0 
             "
           >
             <div
               className="
                 flex
-                mx-auto p-5
+                p-5 
                 bg-linear-105 from-[#f1c0f3] from-10% to-[#f3b3be]
                 border-[#dd7783] rounded-2xl shadow-md 
                 shadow-[#464344] dark:shadow-[0_4px_10px_#121212]
                 justify-center items-center
-                lg:w-90 lg:h-90 md:mx-0 lg:p-0 md:p-5
+                aspect-square  md:mx-0 lg:p-6 md:p-5
               "
             >
               <div
@@ -210,11 +212,11 @@ const Home = () => {
                   border-2 border-[#dd7783] rounded-2xl
                   transition-transform shadow-[0_0_20px_#464344]
                   justify-center items-center duration-300 hover:scale-105
-                  lg:w-72 lg:h-72 md:w-50 md:h-50
+                  
                 "
               >
                 <img
-                  src="anime pfp.jpg"
+                  src="profimg.jpeg"
                   alt=""
                   className="
                     rounded-2xl
@@ -224,18 +226,19 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="reveal">
+        <div className="reveal min-h-100  max-w-5xl mx-auto">
           <About />
         </div>
-        <div className="reveal">
+        <div className="reveal min-h-100 max-w-5xl mx-auto">
           <Skills />
         </div>
-        <div className="reveal">
+        <div className="reveal min-h-100  max-w-5xl mx-auto">
           <Project />
         </div>
-        <div className="reveal">
+        <div className="reveal min-h-100">
           <Contact />
         </div>
+       </div>
       </div>
     </>
   );

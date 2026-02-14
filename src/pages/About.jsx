@@ -6,8 +6,8 @@ const About = () => {
       id="about"
       className="
       
-      
-        scroll-mt-30 md:mt-20 lg:scroll-mt-50 
+     w-full
+         scroll-mt-30 md:mt-30 lg:scroll-mt-40  mt-20
     
       "
     >
@@ -22,17 +22,17 @@ const About = () => {
       </h1>
       <div
         className="
-          flex flex-col
+         grid grid-cols-1 lg:grid-cols-3 
           mt-10 px-5
-          gap-10 
-          lg:flex lg:flex-row lg:px-30 md:py-20 lg:mt-10 lg:justify-between lg:items-center
+          gap-10
+           lg:px-10 md:py-10 lg:mt-10 
         "
       >
         <div
           className="
             p-5 md:p-15 lg:p-5 bg-linear-150 from-[#f3aebd] from-15%  to-[#efbdf0] to-99% 
              dark:bg-linear-150 dark:from-[#4d383e] dark:to-[#4d383e]
-            text-center  dark:border dark:shadow-[0_5px_15px_#000]
+            text-center  dark:border dark:shadow-[0_5px_15px_#000] 
             rounded-2xl border border-[#b64754] 
             shadow-[0_2px_10px_#121212] transition-transform text-sm md:text-base
             dark:border-[#f883aa] duration-300 hover:scale-105 text-[#6b1330]

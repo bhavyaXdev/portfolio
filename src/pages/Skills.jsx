@@ -6,8 +6,8 @@ const Skills = () => {
       <section
         id="skills"
         className="
-          mt-20
-          scroll-mt-30
+          mt-30 w-full 
+          scroll-mt-40
           md:mt-20
           lg:mt-25 lg:scroll-mt-50
         "
@@ -23,12 +23,12 @@ const Skills = () => {
         </h1>
         <div
           className="
-            grid
-            mt-10 px-5
-            text-center
-            gap-10
-            md:px-10 md:py-20 md:mt-0 md:gap-20
-            lg:grid-cols-3 lg:px-30 lg:gap-15
+          grid grid-cols-1 lg:grid-cols-3 
+          mt-10 px-5
+          gap-10 text-center
+           lg:px-10 md:py-10 lg:mt-10  
+          
+         
           "
         >
           <div

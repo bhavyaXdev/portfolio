@@ -22,7 +22,7 @@ const ToggleBtn = () => {
           bg-[#f5bbcb]
           border-pink-200 rounded-full
           shadow-[0_3px_5px_#7a5863]
-          fixed top-23 right-5 justify-center items-center dark:shadow-[0_2px_10px_#000]
+          fixed top-20 right-5 justify-center items-center dark:shadow-[0_2px_10px_#000]
           lg:top-5 lg:right-10 hover:scale-110 transition-all duration-300
         "
       >

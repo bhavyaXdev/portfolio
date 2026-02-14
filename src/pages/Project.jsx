@@ -6,9 +6,9 @@ const Project = () => {
       <section
         id="project"
         className="
-          mt-20
-          scroll-mt-30
-          md:mt-20
+          mt-30 w-full 
+          scroll-mt-40
+          md:mt-20 
           lg:mt-25
         "
       >
@@ -23,23 +23,22 @@ const Project = () => {
         </h1>
         <div
           className="
-            flex flex-col
-            mt-10 p-5
-            gap-10
-            md:mt-20 md:gap-10
-            lg:flex lg:flex-row lg:px-30 lg:gap-10 lg:justify-center lg:items-center
+             grid grid-cols-1 lg:grid-cols-2
+          mt-10   px-5
+          gap-10 justify-items-center
+           lg:mt-10  lg:px-40 md:py-10
           "
         >
           <div
             className="
-              pt-5 p-5 min-h-80 
+              pt-5 p-5 
               text-[#6b1330] text-[15px]
               bg-[#fcd7de] from-[#fcd7de] to-[#ca8890]
               border-[#6b1330] rounded-2xl
               shadow-[0_2px_10px_#121212] transition-transform dark:border
               dark:border-[#f883aa] dark:bg-linear-120 dark:from-[#423036] dark:to-[#423036] dark:text-[#e7bac9] hover:-translate-y-2 duration-300 dark:shadow-[0_5px_15px_#000]
               md:p-10 md:text-[#6b1330] bg-linear-120
-              lg:max-w-xs lg:p-5
+               lg:p-5
             "
           >
             <h1
@@ -93,7 +92,7 @@ const Project = () => {
           </div>
           <div
             className="
-              pt-5 p-5 lg:min-h-80 md:min-h-70
+              pt-5 p-5 
               text-[#6b1330] text-[15px]
               bg-[#fcd7de] from-[#fcd7de]  to-[#ca8890]
               border-[#6b1330] rounded-2xl dark:bg-linear-120 dark:from-[#423036] dark:to-[#423036] dark:border
@@ -101,7 +100,7 @@ const Project = () => {
               dark:border-[#f883aa] dark:bg-[#423036] dark:text-[#e7bac9] hover:-translate-y-2
                duration-300 dark:shadow-[0_5px_20px_#000]
               md:p-10 md:text-[#6b1330] bg-linear-130 to-80%
-              lg:max-w-xs lg:p-5 
+              lg:p-5 
             "
           >
             <h1

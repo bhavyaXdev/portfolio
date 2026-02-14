@@ -1,4 +1,6 @@
 @import "tailwindcss";
+
+
 @custom-variant dark (&:where(.dark, .dark *));
 html {
   scroll-behavior: smooth;
@@ -7,7 +9,6 @@ html {
 @layer base {
   body {
     @apply bg-pink-200;
-    overflow-x: hidden;
   }
   .dark body {
     @apply dark:bg-[#745660];
@@ -15,34 +16,7 @@ html {
   h1 {
     font-family: "Playfair Display", serif;
   }
-}
-@layer utilities {
-  .app {
-    @apply pt-5 h-auto;
-  }
-  .nav {
-    @apply w-full max-sm:fixed z-50;
-  }
-  .nav-div {
-    @apply flex justify-between items-center sticky lg:px-35 px-10 mx-4 lg:mx-30 rounded-3xl py-3 bg-[#f0acbf]  text-[#883640]  font-medium shadow-[0_3px_5px_#7a5863]  max-sm:py-2 dark:shadow-[0_4px_5px_#121212];
-  }
-  .md-items{
-    @apply md:flex hidden justify-center items-center gap-15;
-
-  }
-  .sm-btn{
-    @apply md:hidden text-[#6b1330] 
-  }
-  .sm-BtnFun{
-    @apply z-50 md:hidden  fixed inset-0 bg-black/40 h-full;
-  }
-  .sm-div{
-    @apply bg-[#e7a4ba] w-50 h-full font-medium text-[#6b1330] z-60 p-5 fixed top-0 left-0 transform transition-transform duration-300;
-  }
-  .sm-navDiv{
-    @apply md:hidden flex flex-col p-5 gap-5 
-  }
-  .sm-clsBtn{
-    @apply md:hidden 
+  h3{
+font-family: "Lavishly Yours", cursive;
   }
 }

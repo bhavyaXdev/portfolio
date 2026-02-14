@@ -1,14 +1,17 @@
 import React, { useRef, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast, { Toaster } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const form = useRef();
   const [isSent, setIsSent] = useState(false);
+  const [loading, setloading] = useState(false);
+  const [isMobile, setMobile] = useState(window.innerWidth < 1024);
 
   const sendMail = (e) => {
     e.preventDefault();
+    setloading(true);
+
     emailjs
       .sendForm(
         "service_5azyhdt",
@@ -20,47 +23,40 @@ const Contact = () => {
         () => {
           setIsSent(true);
           form.current.reset();
+
           toast.success(
             `Thanks for reaching out 💌, Your message is on its way.`,
-            {
-              position: "top-right",
-              autoClose: 3000,
-              hideProgressBar: true,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              theme: "light",
-            },
           );
         },
         (error) => {
           toast.error("Error in sending message", error);
-          toast.error("something went wrong , try again later!", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-          });
         },
-      );
+      )
+      .finally(() => {
+        setloading(false);
+      });
   };
   return (
     <>
+      <Toaster
+        position={isMobile ? "top-center" : "top-right"}
+        toastOptions={{
+          duration: 5000,
+          style: {
+            borderRadius: "14px",
+            marginTop: `${isMobile ? "70px" : "0px"}`,
+          },
+        }}
+      />
       <section
         id="contact"
         className="
-          mt-20
-          scroll-mt-20 max
+          mt-30 w-full
+          scroll-mt-40 max
           md:mt-30
           lg:mt-20 lg:p-5 lg:scroll-mt-15
         "
       >
-        <ToastContainer style={{ zIndex: 99999 }}
-  limit={1}
-  newestOnTop
-        />
         <div
           className="
             mx-auto
@@ -96,52 +92,6 @@ const Contact = () => {
               md:w-2xl md:mt-10 md:text-xl
             "
           >
-            {/* <div
-              className="
-                grid
-                gap-5
-                md:grid-cols-2
-              "
-            >
-              <div
-                className="
-                  flex flex-col
-                  md:gap-3
-                "
-              >
-                <h1>Your Name</h1>
-                <input
-                  type="text"
-                  name=""
-                  id=""
-                  className="
-                    px-5
-                    text-sm
-                    border-b border-b-[#6b1330]
-                    outline-none
-                  "
-                />
-              </div>
-              <div
-                className="
-                  flex flex-col
-                  md:gap-3
-                "
-              >
-                <h1>Your Email</h1>
-                <input
-                  type="text"
-                  name=""
-                  id=""
-                  className="
-                    px-5
-                    text-sm
-                    border-b border-b-[#6b1330]
-                    outline-none
-                  "
-                />
-              </div>
-            </div> */}
             <form
               ref={form}
               onSubmit={sendMail}
@@ -229,13 +179,13 @@ const Contact = () => {
                   name="message"
                   id=""
                   className="
-                    hidden
+                  
                     w-full
                     px-1 mt-4
                     text-sm text-[#6d3f4e] font-mono
                     border-b border-b-[#6b1330]
                     outline-none dark:border-b-pink-200 dark:text-[#fab5cc]
-                    md:block md:text-[18px] md:dark:text-[#facedd]
+                   hidden md:block md:text-[18px] md:dark:text-[#facedd]
                   "
                 />
                 <textarea
@@ -262,16 +212,17 @@ const Contact = () => {
               >
                 <button
                   type="submit"
-                  className="
-                    py-2 px-10
+                  disabled={loading}
+                  className={`
+                    py-2 w-45 md:w-55
                     bg-linear-150 from-[#f397ab] to-[#efbdf0]
                     rounded-full
                     cursor-pointer transition-all shadow-[0_3px_5px_#000]
                     outline-none duration-300 dark:shadow-[0_3px_5px_#000] dark:text-[#4d2429] to hover:opacity-80
-                    md:px-15 md:text-[18px]
-                  "
+                     md:text-[18px]
+                   ${loading ? "opacity-60 cursor-not-allowed" : "hover-opacity-80"}`}
                 >
-                  Send a message
+                  {loading ? "Sending..." : "Send a message 💌"}
                 </button>
               </div>
             </form>
@@ -285,13 +236,13 @@ const Contact = () => {
             <div
               className="
                 w-full
-                p-3
+                p-3 border-0
                 text-center text-[#4d2429]
                 bg-linear-120 from-[#fcd7de] to-[#ca8890]
-                border-0 rounded-2xl
+                 rounded-2xl
                 shadow-[0_3px_5px_#000]
                 dark:bg-bg-120 dark:from-[#4d383e] dark:to-[#4d383e] dark:text-pink-200 dark:border-0 dark:shadow-[0_3px_5px_#000]
-                md:w-100 md:mx-auto md:p-5
+                md:w-sm md:mx-auto md:p-5
               "
             >
               <h1
@@ -299,7 +250,7 @@ const Contact = () => {
 
                 "
               >
-                You can reach me at <a href="">bhavya@gmail.com</a>
+                You can reach me at <a href="">bhavya512500@gmail.com</a>
               </h1>
               <p
                 className="
