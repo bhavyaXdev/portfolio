@@ -8,6 +8,8 @@ import Skills from "./Skills";
 import Project from "./Project";
 import Contact from "./Contact";
 import ScrollReveal from "scrollreveal";
+import { GoDownload } from "react-icons/go";
+import { IoMdContact } from "react-icons/io";
 
 const Home = () => {
   useEffect(() => {
@@ -162,28 +164,28 @@ const Home = () => {
               "
             >
               <a
-                href="#project"
-                className="
+                href="/Bhavya Resume Updated.pdf" target="_blank"
+                className=" flex items-center gap-1
                   px-5 py-1 
                   text-[16px] text-[#6b1338] font-medium 
                    rounded-full bg-linear-150 from-[#f397ab] from-15%  to-[#efbdf0]
                  cursor-pointer shadow-[0_2px_3px_#7a5863]  transform dark:bg-linear-150 dark:from-[#f397ab]   dark:to-[#efbdf0]
-                  dark:text-[#6b1338] dark:border-0 inline-block transition-transform duration-300 ease-in-out hover:scale-105 dark:hover:scale-100 dark:shadow-[0_4px_5px_#121212]
+                  dark:text-[#6b1338] dark:border-0  transition-transform duration-300 ease-in-out hover:scale-105 dark:hover:scale-100 dark:shadow-[0_4px_5px_#121212]
                 "
               >
-                Projects
+                Resume <GoDownload/>
               </a>
               <a
                 href="#contact"
-                className="
+                className=" flex items-center gap-1
                   px-5 py-1 
                   text-[16px] text-[#6b1338] font-medium 
                    rounded-full bg-linear-150 from-[#f397ab] from-15% to-[#efbdf0]
                  cursor-pointer shadow-[0_2px_3px_#7a5863]  transform dark:bg-linear-150 dark:from-[#f397ab]   dark:to-[#efbdf0]
-                  dark:text-[#6b1338] dark:border-0 inline-block transition-transform duration-300 ease-in-out hover:scale-105 dark:hover:scale-100 dark:shadow-[0_4px_5px_#121212]
+                  dark:text-[#6b1338] dark:border-0 transition-transform duration-300 ease-in-out hover:scale-105 dark:hover:scale-100 dark:shadow-[0_4px_5px_#121212]
                 "
               >
-                Contact
+                Contact <IoMdContact/>
               </a>
             </div>
           </div>
